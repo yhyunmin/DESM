@@ -1,1 +1,1 @@
-export { default as NewPage } from "./ui/NewPage";
+export { default as Page } from "@/pages/newPage/ui/Page";

@@ -1,7 +1,7 @@
 import { BaseButton } from "@/shared";
 import { Nav } from "@/widgets/nav/ui/Nav";
 
-export default function NewPage() {
+export default function Page() {
   return (
     <>
       <div className="m-auto flex h-dvh max-w-[1137px] bg-zinc-100">
@@ -13,7 +13,7 @@ export default function NewPage() {
             </h3>
             <p>1. Create a page</p>
             <p>2. Add boards to page</p>
-            <BaseButton>Add New Page</BaseButton>
+            <BaseButton type="secondary">Add New Page</BaseButton>
           </section>
         </main>
       </div>

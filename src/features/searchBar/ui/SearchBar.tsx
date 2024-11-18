@@ -6,13 +6,13 @@ const SearchBar = () => {
     <>
       <div className="flex flex-col gap-3">
         <div className="relative">
-          <Search className="absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 transform text-zinc-400 " />
+          <Search className="absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 transform text-zinc-400" />
           <BaseInput
             placeholder="Search"
-            className="pl-9 w-full h-full shadow-none p-1"
+            className="w-full h-full shadow-none p-2 pl-9 text-black ring-orange-500"
           />
         </div>
-        <BaseButton>Add New Page</BaseButton>
+        <BaseButton type="secondary">Add New Page</BaseButton>
       </div>
     </>
   );

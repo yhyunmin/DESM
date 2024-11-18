@@ -12,7 +12,7 @@ const BaseInput = ({
 }) => {
   return (
     <>
-      <div className="relative ">
+      <div className="relative">
         <div className="absolute transform top-1/2 right-2 -translate-y-1/2 cursor-pointer select-none">
           {children}
         </div>
