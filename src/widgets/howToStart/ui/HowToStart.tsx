@@ -1,4 +1,4 @@
-import { BaseButton } from "@/shared";
+import { BaseButton, BaseInput } from "@/shared";
 
 const HowToStart = () => {
   return (

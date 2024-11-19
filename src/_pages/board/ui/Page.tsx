@@ -1,5 +1,4 @@
 import { BaseButton, BaseInput } from "@/shared";
-import { Nav } from "@/widgets/nav/ui/Nav";
 import { CalendarSearch } from "lucide-react";
 
 export default function Page() {
@@ -28,7 +27,7 @@ export default function Page() {
                 <div className="flex items-center gap-2">
                   <p>To</p>
                   <BaseInput>
-                    <CalendarSearch className="h-5 w-5 " strokeWidth={2.5} />
+                    <CalendarSearch className="h-5 w-5" strokeWidth={2.5} />
                   </BaseInput>
                 </div>
                 <BaseButton type="secondary">View Timeline</BaseButton>

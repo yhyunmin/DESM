@@ -1,6 +1,6 @@
-import "@/app/styles";
-import { LayoutProps } from "@/app/config/type";
-import { Nav } from "@/widgets/nav/ui/Nav";
+import "@/_app/styles";
+import { LayoutProps } from "@/_app/config/type";
+import { Nav } from "@/widgets/nav";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
