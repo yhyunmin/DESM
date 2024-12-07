@@ -9,7 +9,7 @@ import { CalendarIcon } from "lucide-react";
 
 import { cn } from "@/lib/utils";
 
-export function BaseDatePicker() {
+export function BaseDatePicker({ ...props }) {
   const [date, setDate] = React.useState<Date>();
 
   return (

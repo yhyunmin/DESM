@@ -1,5 +1,5 @@
+import { TimeLine } from "@/features/timeLine";
 import { BaseButton, BaseDatePicker, BaseInput } from "@/shared";
-import { CalendarSearch } from "lucide-react";
 
 export default function Board() {
   return (
@@ -16,19 +16,7 @@ export default function Board() {
               <div className="w-60 h-2 bg-zinc-300 rounded-full"></div>
             </div>
             <div className="flex justify-between w-full">
-              <div className="flex gap-2 justify-start">
-                <form action="">
-                  <div className="flex items-center gap-2">
-                    <p>From</p>
-                    <BaseDatePicker />
-                  </div>
-                  <div className="flex items-center gap-2">
-                    <p>To</p>
-                    <BaseDatePicker />
-                  </div>
-                  <BaseButton type="secondary">View Timeline</BaseButton>
-                </form>
-              </div>
+              <TimeLine />
               <BaseButton type="filled">Add new Board</BaseButton>
             </div>
           </div>
