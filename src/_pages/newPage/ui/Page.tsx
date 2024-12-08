@@ -13,7 +13,7 @@ export default function Page() {
             </h3>
             <p>1. Create a page</p>
             <p>2. Add boards to page</p>
-            <BaseButton type="secondary">Add New Page</BaseButton>
+            <BaseButton mode="secondary">Add New Page</BaseButton>
           </section>
         </main>
       </div>

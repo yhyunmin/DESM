@@ -17,7 +17,7 @@ export default function Board() {
             </div>
             <div className="flex justify-between w-full">
               <TimeLine />
-              <BaseButton type="filled">Add new Board</BaseButton>
+              <BaseButton mode="filled">Add new Board</BaseButton>
             </div>
           </div>
         </section>

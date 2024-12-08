@@ -1,5 +1,6 @@
 import "@/_app/styles";
 import { LayoutProps } from "@/_app/config/type";
+import { Toaster } from "@/shared/ui/toaster";
 import { Nav } from "@/widgets/nav";
 import { Metadata } from "next";
 
@@ -11,10 +12,11 @@ export function RootLayout({ children }: LayoutProps) {
   return (
     <html lang="ko">
       <body className="h-dvh w-dvw">
-        <div className="m-auto flex h-dvh max-w-[1137px] bg-zinc-100">
+        <main className="m-auto flex h-dvh max-w-[1137px] bg-zinc-100">
           <Nav />
           {children}
-        </div>
+        </main>
+        <Toaster />
       </body>
     </html>
   );

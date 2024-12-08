@@ -1,14 +1,16 @@
 import { Button } from "@/shared/ui/button";
 import { ReactNode } from "react";
 
-type ButtonType = "filled" | "text" | "secondary" | "disable";
+type ButtonMode = "filled" | "text" | "secondary" | "disable";
 
 const BaseButton = ({
   children,
-  type = "secondary",
+  mode = "secondary",
+  type = "button",
 }: {
   children: ReactNode;
-  type?: ButtonType;
+  mode?: ButtonMode;
+  type?: "button" | "submit" | "reset";
 }) => {
   const uiType = {
     filled:
@@ -19,10 +21,13 @@ const BaseButton = ({
     disable:
       "border border-transparent shadow-none bg-zinc-200 text-zinc-400 hover:border hover:border-zinc-400 hover:text-zinc-800 hover:bg-zinc-100",
   };
-  const btnUI = uiType[type];
+  const btnUI = uiType[mode];
+
   return (
     <>
-      <Button className={btnUI}>{children}</Button>
+      <Button className={btnUI} type={type}>
+        {children}
+      </Button>
     </>
   );
 };

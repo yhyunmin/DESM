@@ -12,7 +12,7 @@ const SearchBar = () => {
             className="w-full h-full shadow-none p-2 pl-9 text-black ring-orange-500"
           />
         </div>
-        <BaseButton type="secondary">Add New Page</BaseButton>
+        <BaseButton mode="secondary">Add New Page</BaseButton>
       </div>
     </>
   );

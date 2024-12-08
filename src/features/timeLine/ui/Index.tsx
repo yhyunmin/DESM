@@ -18,25 +18,27 @@ import * as React from "react";
 import { useForm } from "react-hook-form";
 
 const Index = () => {
-  const form = useForm();
-  const onSubmit = () => {
+  const form = useForm({
+    defaultValues: {
+      from: null,
+      to: null,
+    },
+  });
+  const onSubmit = (data: { from: Date | null; to: Date | null }) => {
+    console.log("year", data);
     return null;
   };
   return (
     <>
       <div className="flex gap-2 justify-start">
         <Form {...form}>
-          <form
-            onSubmit={() => {
-              form.handleSubmit(onSubmit);
-            }}
-          >
-            <FormField
-              name="from"
-              control={form.control}
-              render={({ field }) => (
-                <FormItem>
-                  <div className="flex items-center gap-2">
+          <form onSubmit={form.handleSubmit(onSubmit)}>
+            <div className="flex">
+              <FormField
+                name="from"
+                control={form.control}
+                render={({ field }) => (
+                  <FormItem className="flex items-center gap-4">
                     <FormLabel>From</FormLabel>
                     <Popover>
                       <PopoverTrigger asChild>
@@ -62,21 +64,54 @@ const Index = () => {
                           mode="single"
                           selected={field.value}
                           onSelect={field.onChange}
-                          // disable={{}}
                           initialFocus
                         />
                       </PopoverContent>
                     </Popover>
-                    <FormDescription>시작날짜</FormDescription>
-                  </div>
-                </FormItem>
-              )}
-            />
-            <div className="flex items-center gap-2">
-              <p>To</p>
-              <BaseDatePicker {...form.register("to")} />
+                  </FormItem>
+                )}
+              />
+              <FormField
+                name="to"
+                control={form.control}
+                render={({ field }) => (
+                  <FormItem className="flex items-center gap-4">
+                    <FormLabel>TO</FormLabel>
+                    <Popover>
+                      <PopoverTrigger asChild>
+                        <FormControl>
+                          <Button
+                            variant={"outline"}
+                            className={cn(
+                              "w-[240px] justify-start text-left font-normal",
+                              !field.value && "text-muted-foreground",
+                            )}
+                          >
+                            <CalendarIcon />
+                            {field?.value ? (
+                              format(field.value, "PPP")
+                            ) : (
+                              <span>Pick a date</span>
+                            )}
+                          </Button>
+                        </FormControl>
+                      </PopoverTrigger>
+                      <PopoverContent className="w-auto p-0" align="start">
+                        <Calendar
+                          mode="single"
+                          selected={field.value}
+                          onSelect={field.onChange}
+                          initialFocus
+                        />
+                      </PopoverContent>
+                    </Popover>
+                  </FormItem>
+                )}
+              />
+              <BaseButton mode="secondary" type="submit">
+                View Timeline
+              </BaseButton>
             </div>
-            <BaseButton type="secondary">View Timeline</BaseButton>
           </form>
         </Form>
       </div>
