@@ -26,10 +26,10 @@ const Index = () => {
 
   return (
     <>
-      <div className="flex gap-2 justify-start">
+      <div className="flex  justify-start">
         <Form {...f}>
           <form onSubmit={f.handleSubmit(onSubmit)}>
-            <div className="flex">
+            <div className="flex items-center">
               <DatePickerField name="from" label="From" control={f.control} />
               <DatePickerField name="to" label="To" control={f.control} />
               <BaseButton mode="secondary" type="submit">

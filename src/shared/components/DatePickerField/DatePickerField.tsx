@@ -15,7 +15,7 @@ const DatePickerField = ({ name, label, control }: IDaterPickerField) => {
         name={name}
         control={control}
         render={({ field }) => (
-          <FormItem className="flex items-center gap-4">
+          <FormItem className="flex items-center justify-center  gap-2 p-1">
             <FormLabel>{label}</FormLabel>
             <Popover>
               <PopoverTrigger asChild>
@@ -36,7 +36,10 @@ const DatePickerField = ({ name, label, control }: IDaterPickerField) => {
                   </Button>
                 </FormControl>
               </PopoverTrigger>
-              <PopoverContent className="w-auto p-0" align="start">
+              <PopoverContent
+                className="w-auto p-0 bg-white text-black"
+                align="start"
+              >
                 <Calendar
                   mode="single"
                   selected={field.value ?? undefined}
