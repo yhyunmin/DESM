@@ -1,18 +1,26 @@
 "use client";
 import { BaseButton } from "@/shared";
 import { DatePickerField, DateRangeType } from "@/shared/components";
+import { DateRangeSchema } from "@/shared/schema";
 import { Form } from "@/shared/ui/form";
+import { zodResolver } from "@hookform/resolvers/zod";
+import dayjs from "dayjs";
 import { useForm } from "react-hook-form";
 
 const Index = () => {
   const f = useForm<DateRangeType>({
+    resolver: zodResolver(DateRangeSchema),
     defaultValues: {
       from: null,
       to: null,
     },
   });
-  const onSubmit = (data: { from: Date | null; to: Date | null }) => {
-    console.log("year", data);
+
+  const onSubmit = (data: DateRangeType) => {
+    console.log(
+      dayjs(data.from).format("YYYY.MM.DD"),
+      dayjs(data.to).format("YYYY.MM.DD"),
+    );
     return null;
   };
 
