@@ -1,4 +1,4 @@
-import HowToStart from "@/widgets/main/ui/HowToStart";
+import HowToStart from "@/widgets/header/ui/HowToStart";
 
 const Index = () => {
   return (

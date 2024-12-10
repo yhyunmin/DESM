@@ -7,7 +7,7 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import dayjs from "dayjs";
 import { useForm } from "react-hook-form";
 
-const Index = () => {
+export const TimeLine = () => {
   const f = useForm<DateRangeType>({
     resolver: zodResolver(DateRangeSchema),
     defaultValues: {
@@ -42,5 +42,3 @@ const Index = () => {
     </>
   );
 };
-
-export default Index;

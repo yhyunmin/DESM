@@ -1,9 +1,11 @@
-import { LayoutProps } from "@/app/config/type";
-import { BaseInput } from "@/shared";
-import { CalendarSearch } from "lucide-react";
+import { LayoutProps } from "@/_app/config/type";
+import Header from "@/widgets/header/ui/Header";
 
-const Layout = ({ children }: LayoutProps) => {
-  return null;
+export const BoardLayout = ({ children }: LayoutProps) => {
+  return (
+    <>
+      <Header />
+      {children}
+    </>
+  );
 };
-
-export default Layout;

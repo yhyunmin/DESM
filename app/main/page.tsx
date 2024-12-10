@@ -1,4 +1,3 @@
-import { DatePickerField } from "@/shared/components";
 import { useToggle } from "@/shared/hooks";
 
 const Page = () => {

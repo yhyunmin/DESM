@@ -14,7 +14,7 @@ export function RootLayout({ children }: LayoutProps) {
       <body className="h-dvh w-dvw">
         <main className="m-auto flex h-dvh max-w-[1137px] bg-zinc-100">
           <Nav />
-          {children}
+          <div className="flex flex-col">{children}</div>
         </main>
         <Toaster />
       </body>

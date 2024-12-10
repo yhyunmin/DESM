@@ -1,2 +1,2 @@
 export * from "./ui/HowToStart";
-export * from "./ui/Board";
+export * from "./ui/Header";

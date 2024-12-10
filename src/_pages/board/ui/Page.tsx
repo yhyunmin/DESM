@@ -1,9 +1,9 @@
-import Board from "@/widgets/main/ui/Board";
+import { BoardList } from "@/features/boardList";
 
 const Page = () => {
   return (
     <>
-      <Board />
+      <BoardList />
     </>
   );
 };
