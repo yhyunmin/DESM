@@ -6,6 +6,7 @@ import { Calendar } from "@/shared/ui/calendar";
 import { FormControl, FormField, FormItem, FormLabel } from "@/shared/ui/form";
 import { Popover, PopoverContent, PopoverTrigger } from "@/shared/ui/popover";
 import { format } from "date-fns";
+import dayjs from "dayjs";
 import { CalendarIcon } from "lucide-react";
 
 const DatePickerField = ({ name, label, control }: IDaterPickerField) => {
@@ -29,7 +30,8 @@ const DatePickerField = ({ name, label, control }: IDaterPickerField) => {
                   >
                     <CalendarIcon />
                     {field?.value ? (
-                      format(field.value, "PPP")
+                      // format(field.value, "PPP")
+                      dayjs(field.value).format("YYYY-MM-DD")
                     ) : (
                       <span>Pick a date</span>
                     )}
