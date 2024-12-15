@@ -5,18 +5,15 @@ import { FormControl, FormItem, FormLabel } from "@/shared/ui/form";
 import { Popover, PopoverContent, PopoverTrigger } from "@/shared/ui/popover";
 import dayjs from "dayjs";
 import { CalendarIcon } from "lucide-react";
-import { ControllerRenderProps, FieldValues, Path } from "react-hook-form";
+import { ControllerRenderProps } from "react-hook-form";
 
-interface IDatePickerProps<T extends FieldValues> {
+interface IDatePickerProps {
   label?: string;
-  field: ControllerRenderProps<T, Path<T>>;
-  name: string;
+  value: ControllerRenderProps["value"];
+  onChange: ControllerRenderProps["onChange"];
 }
 
-const DatePickerFormItem = <T extends FieldValues>({
-  label,
-  field,
-}: IDatePickerProps<T>) => {
+const DatePickerFormItem = ({ label, value, onChange }: IDatePickerProps) => {
   return (
     <>
       {label && <FormLabel>{label}</FormLabel>}
@@ -28,12 +25,12 @@ const DatePickerFormItem = <T extends FieldValues>({
                 variant={"outline"}
                 className={cn(
                   "w-[240px] justify-start text-left font-normal",
-                  !field.value && "text-muted-foreground",
+                  !value && "text-muted-foreground",
                 )}
               >
                 <CalendarIcon />
-                {field?.value ? ( // format(field.value, "PPP")
-                  dayjs(field.value).format("YYYY-MM-DD")
+                {value ? ( // format(field.value, "PPP")
+                  dayjs(value).format("YYYY-MM-DD")
                 ) : (
                   <span>Pick a date</span>
                 )}
@@ -46,8 +43,8 @@ const DatePickerFormItem = <T extends FieldValues>({
           >
             <Calendar
               mode="single"
-              selected={field.value ?? undefined}
-              onSelect={field.onChange}
+              selected={value ?? undefined}
+              onSelect={onChange}
               initialFocus
             />
           </PopoverContent>

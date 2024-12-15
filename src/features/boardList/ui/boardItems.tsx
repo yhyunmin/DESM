@@ -60,14 +60,20 @@ const BoardItems = () => {
               name="boardFrom"
               control={f.control}
               render={({ field }) => (
-                <DatePickerFormItem<BoardItemType> field={field} {...field} />
+                <DatePickerFormItem
+                  onChange={field.onChange}
+                  value={field.value}
+                />
               )}
             />
             <FormField
               name="boardTo"
               control={f.control}
               render={({ field }) => (
-                <DatePickerFormItem<BoardItemType> field={field} {...field} />
+                <DatePickerFormItem
+                  onChange={field.onChange}
+                  value={field.value}
+                />
               )}
             />
           </form>
