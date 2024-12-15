@@ -1,8 +1,12 @@
 "use client";
 import { BaseButton } from "@/shared";
-import { DatePickerField, DateRangeType } from "@/shared/components";
+import {
+  DatePickerField,
+  DatePickerFormItem,
+  DateRangeType,
+} from "@/shared/components";
 import { DateRangeSchema } from "@/shared/schema";
-import { Form } from "@/shared/ui/form";
+import { Form, FormField } from "@/shared/ui/form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import dayjs from "dayjs";
 import { useForm } from "react-hook-form";
@@ -30,6 +34,20 @@ export const TimeLine = () => {
         <Form {...f}>
           <form onSubmit={f.handleSubmit(onSubmit)}>
             <div className="flex items-center">
+              <FormField
+                name="from"
+                control={f.control}
+                render={({ field }) => (
+                  <DatePickerFormItem<DateRangeType> field={field} {...field} />
+                )}
+              />
+              <FormField
+                name="to"
+                control={f.control}
+                render={({ field }) => (
+                  <DatePickerFormItem<DateRangeType> field={field} {...field} />
+                )}
+              />
               <DatePickerField name="from" label="From" control={f.control} />
               <DatePickerField name="to" label="To" control={f.control} />
               <BaseButton mode="secondary" type="submit">

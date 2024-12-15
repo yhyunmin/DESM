@@ -7,6 +7,7 @@ const BaseInput = ({
   children,
   placeholder,
   value,
+  ...field
 }: {
   children?: ReactNode;
   placeholder?: string;
@@ -26,6 +27,7 @@ const BaseInput = ({
           onChange={() => {
             console.log(value);
           }}
+          {...field}
         />
       </div>
     </>

@@ -1,5 +1,5 @@
 import BoardEmpty from "./boardEmpty";
-import BoardItem from "./boardItem";
+import BoardItem from "src/features/boardList/ui/boardItem.tsx.backup";
 
 const BoardList = () => {
   const testArray = ["1"];

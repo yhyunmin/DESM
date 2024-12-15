@@ -1,6 +1,10 @@
 "use client";
 import BaseInput from "@/shared/BaseInput";
-import { DatePickerField, DateRangeType } from "@/shared/components";
+import {
+  DatePickerField,
+  DatePickerFormItem,
+  DateRangeType,
+} from "@/shared/components";
 import { Card } from "@/shared/ui/card";
 import { Checkbox } from "@/shared/ui/checkbox";
 import { Form, FormField, FormItem } from "@/shared/ui/form";
@@ -52,6 +56,14 @@ const BoardItem = () => {
                 </FormItem>
               )}
             />
+            <FormField
+              name="boardTo"
+              control={f.control}
+              render={({ field }) => (
+                <DatePickerFormItem<BoardItemType> field={field} {...field} />
+              )}
+            />
+
             <DatePickerField name="boardFrom" label="from" {...f} />
             <DatePickerField name="boardTo" label="to" {...f} />
           </form>
